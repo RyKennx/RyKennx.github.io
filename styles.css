@@ -2,9 +2,9 @@
     --nav-bg: rgba(25, 23, 32, 0.9);
     --text-white: #fff;
     --accent: #1E90BB;
-    --max-width: 1200px;
 }
 html {
+    font-size: clamp(15px, 1.4vw, 20px);
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
@@ -13,14 +13,10 @@ html {
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url(Images/serveur.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: soft-light;
     background-color: #0A0A0A;
     color: var(--text-white);
-    
 }
+
 .main-nav {
     transition: transform 0.3s ease;
     position: fixed;
@@ -31,31 +27,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.6rem 1rem;
-    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    gap: 1.2rem;
     z-index: 100;
     box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-    height: 10vh ;
+    height: 10vh;
 }
 
 .brand {
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     white-space: nowrap;
 }
 
 .nav-toggle {
-    display: none; 
+    display: none;
     background: transparent;
     border: none;
     color: var(--text-white);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     cursor: pointer;
 }
 
 .nav-list {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.8rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -65,10 +61,11 @@ body {
 .nav-list a {
     color: var(--text-white);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: transform .2s, color .15s;
     display: inline-block;
-    padding: 0.25rem 0.35rem;
+    padding: 0.35rem 0.45rem;
+    font-size: 1rem;
 }
 
 .nav-list a:hover {
@@ -92,153 +89,124 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 3.6rem; 
+    padding-top: 4rem;
     box-shadow: 0px 0px 60px #000000;
 }
 
 .Section1 h1 {
     color: white;
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-size: clamp(2.4rem, 4.6vw, 5rem);
     text-align: center;
     text-shadow: 0 0 10px #ffffff33;
 }
 
+.Section2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4vw;
+    position: relative;
+    background: radial-gradient(circle, #1e1e27, #0a0a0a );
+    box-shadow: 10px 10px 70px #000000b6;
+}
 
-.container{
-    width: min(60%, var(--max-width));
-    height: 70vh;
-    margin: 0 auto;
-    
+.Section3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #202533, #101011);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .Presentation {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin: 3rem 0;
-    padding: 1.5rem;
+    gap: 1.2rem;
+    margin: 2.5vw 0;
+    padding: 2.2vw;
     background: linear-gradient(45deg, #1a1919, #1b182b);
-    border-radius: 12px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.4);
+    border-radius: 3rem;
+    box-shadow: 0 12px 12px rgba(0,0,0,0.45);
     color: white;
-    text-align: center;
     transition: transform 0.5s ease;
-    overflow-y: none;
+    overflow: visible;
+    min-height: clamp(320px, 30vw, 700px);
+    max-width: clamp(420px, 80vw, 1000px);
+    width: 100%;
+    align-items: center;
+    font-size: clamp(1.05rem, 2.1vw, 2.3rem);
 }
 
 .Presentation:hover{
-    transform: scale(110%);
+    transform: scale(1.06);
     filter: brightness(110%);
+}
+
+.Presentation .texte {
+    width: 100%;
+    max-width: 70ch;
+    text-align: left;
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+.Presentation .texte h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: clamp(1.4rem, 2.4vw, 2.6rem);
+}
+
+.Presentation .texte p {
+    margin: 0 0 1rem 0;
+    font-size: clamp(0.95rem, 1.6vw, 1.3rem);
 }
 
 .titreBleu {
     color: var(--accent);
-    margin-top: 0;
-}
-
-.Section2, .section3, .BigBox {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
-}
-
-.Section2 {
-    background: radial-gradient(circle, #181a27, #111111);
-    z-index: 7;
-}
-
-.section3 {
-    background: radial-gradient(circle, #141430, #1a1a1a );
-
-   
 }
 
 .BigBox {
     display: grid;
     background: linear-gradient(45deg, #111111, #191527);
-    border-radius: 8px;
+    border-radius: 2rem;
     box-shadow: 0 0px 40px rgba(0,0,0,0.8);
-    width: 94%;
-    height: 800px;
-    column-gap: 80px;
-    row-gap: 50px;
+    width: clamp(360px, 92vw, 3500px);
+    height: clamp(150px, 50vw, 1600px);
+    column-gap: clamp(20px, 3.6vw, 56px);
+    row-gap: clamp(20px, 1.2vw, 28px);
     justify-content: center;
+    margin: clamp(1rem, 4vw, 6rem);
+    grid-template-columns: repeat(3, 1fr);
+    padding: clamp(2.5rem, 3vw, 4rem);
 }
 
 .BigBox h2{
-    grid-area: 1 / 1/ 1/ 4;
+    grid-area: 1 / 1 / 1 / 4;
     text-align: center;
-    font-size: 3rem;
+    font-size: clamp(1.9rem, 2.5vw, 3rem);
+    margin: 0 0 2rem 0;
 }
 
-.BigBox #Img1{
-    grid-area: 2 / 1 / 2/ 1;
-    width: 50vh;
+.BigBox #Img1, .BigBox #Img2, .BigBox #Img3 {
+    width: clamp(130px, 25vw, 700px);
     border-radius: 3%;
     transition: transform 0.4s ease;
+    justify-self: center;
 }
 
-.BigBox #Img1:hover{
-    transform: rotate(5deg);
-}
-.BigBox .image_section3:hover{
-    filter: brightness(130%);
-}
-.BigBox .image_section3{
-    box-shadow: 0px 0px 20px #0000009d;
-}
-.BigBox #Img2{
-    grid-area: 2 / 2 / 2/ 2;
-    width: 50vh;
-    border-radius: 3%;
-    transition: transform 0.4s ease;
-}
+.BigBox #Img1:hover{ transform: rotate(5deg); filter: brightness(120%); }
+.BigBox #Img2:hover{ transform: rotate(5deg); filter: brightness(120%); }
+.BigBox #Img3:hover{ transform: rotate(-7deg); filter: brightness(120%); }
 
-.BigBox #Img2:hover{
-    transform: rotate(5deg);
 
-}
-.BigBox #Img3{
-    grid-area: 2 / 3 / 2/ 3;
-    width: 50vh;
-    border-radius: 3%;
-    transition: transform 0.4s ease;
-}
-
-.BigBox #Img3:hover{
-    transform: rotate(-7deg);
-}
-
-@media (min-width: 1025px) {
-    .Presentation {
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-    }
-    .Presentation .texte {
-        flex: 1;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 60em) {
     .nav-toggle { display: block; }
-    .BigBox {
-        height: 1800px;
-    }
-    .BigBox #Img1{
-        grid-area: 2 / 1 / 2/ 4;
-        width: 50vh;
-    }
-    .BigBox #Img2{
-        grid-area: 3 / 1 / 3/ 4;
-        width: 50vh;
-    }
-
-    .BigBox #Img3{
-        grid-area: 4 / 1 / 4/ 4;
-        width: 50vh;
-    }
+    .BigBox { height: auto; margin: 2.4rem 1rem; grid-template-columns: 1fr; }
+    .BigBox #Img1{ grid-area: 2 / 1 / 2 / 4; width: clamp(180px, 50vw, 420px); }
+    .BigBox #Img2{ grid-area: 3 / 1 / 3 / 4; width: clamp(180px, 50vw, 420px); }
+    .BigBox #Img3{ grid-area: 4 / 1 / 4 / 4; width: clamp(180px, 50vw, 420px); }
 
     .nav-list {
         position: absolute;
@@ -247,30 +215,19 @@ body {
         background: var(--nav-bg);
         flex-direction: column;
         align-items: flex-start;
-        width: 220px;
-        padding: 0.5rem;
+        width: clamp(200px, 44vw, 320px);
+        padding: 0.6rem;
         margin: 0;
         transform-origin: top right;
         border-radius: 0 0 8px 8px;
-        display: none; 
+        display: none;
     }
 
-    .nav-list.open {
-        display: flex;
-    }
+    .nav-list.open { display: flex; }
 
-    .nav-list a {
-        width: 100%;
-        padding: 0.6rem 0.8rem;
-    }
+    .nav-list a { width: 100%; padding: 0.7rem 0.9rem; font-size: 1.05rem; }
 
-    .Section1 {
-        padding-top: 3.8rem;
-    }
+    .Section1 { padding-top: 3.8rem; }
 
-
-    .Presentation {
-        padding: 1rem;
-        overflow-y: scroll;
-    }
+    .Presentation { padding: 1.1rem; overflow-y: visible; align-items: center; }
 }
